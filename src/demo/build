@@ -1,0 +1,15 @@
+#!/bin/sh
+# build <project_name>
+
+if [ $# -ne 1 ]; then
+         echo 1>&2 Usage: $0 project_name
+         exit 127
+fi
+
+echo $-
+
+mkdir ../build
+cd ../build
+pwd
+qmake "../$1/$1.pro"
+make
